@@ -6,6 +6,7 @@
       <class name="FreshRestAssured.TestingRA.Testcases">
         <methods>
           <include name="getSpecificUser"/>
+          <include name="endReport"/>
           <include name="setSpecification"/>
         </methods>
       </class> <!-- FreshRestAssured.TestingRA.Testcases -->
