@@ -27,7 +27,46 @@ public class Testcases {
 		
 		ExtentReportMAnager.createReport();
 	}
-	
+	@Test   
+    void loginIntoDashboard() //Login into the Dashboard
+    {
+  
+    	WebDriverManager.firefoxdriver().setup();
+ 		driver = new FirefoxDriver();
+        driver.get("https://tms.pisystindia.com/admin/login");
+		driver.findElement(By.id("admin_email")).sendKeys("sales.infinitycorp@gmail.com");
+		driver.findElement(By.id("admin_password")).sendKeys("123456");
+		driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/div[2]/button")).click();
+    }
+    
+    
+    // Email Promotion
+    
+    //Downloading Pdf from Email Promotion List
+    @Test
+    void downloadPdfFromPromotionEmailList() {
+    	WebDriverManager.firefoxdriver().setup();
+ 		driver = new FirefoxDriver();
+        driver.get("https://tms.pisystindia.com/admin/login");
+		driver.findElement(By.id("admin_email")).sendKeys("sales.infinitycorp@gmail.com");
+		driver.findElement(By.id("admin_password")).sendKeys("123456");
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/ul/li[9]")).click();
+		driver.findElement(By.xpath("//*[@id=\"example_wrapper\"]/div[1]/div[1]/div[2]/button[3]")).click();
+		driver.quit();
+   }
+    
+  //Downloading Excel from Email Promotion List
+    @Test
+     void downloadexcelFromPromotionEmailList() {
+    	WebDriverManager.firefoxdriver().setup();
+ 		driver = new FirefoxDriver();
+        driver.get("https://tms.pisystindia.com/admin/login");
+		driver.findElement(By.id("admin_email")).sendKeys("sales.infinitycorp@gmail.com");
+		driver.findElement(By.id("admin_password")).sendKeys("123456");
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/ul/li[9]")).click();
+		driver.findElement(By.xpath("//*[@id=\"example_wrapper\"]/div[1]/div[1]/div[2]/button[2]")).click();
+		driver.quit();
+   }
 	@Test
 	public void getListOfUsers() {
 		
